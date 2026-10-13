@@ -422,3 +422,23 @@ td {
     flex-wrap: wrap;
   }
 }
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0;
+  }
+  .site-header, .back-link, .app-badges, .btn, .site-footer {
+    display: none !important;
+  }
+  .content-box {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+  a {
+    color: #000000 !important;
+    text-decoration: underline;
+  }
+}

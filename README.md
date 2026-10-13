@@ -1,6 +1,6 @@
 # Privacy Policies for SneakyZippy Apps
 
-This repository hosts the official Privacy Policies for open-source Android applications developed by **SneakyZippy** (Felix Z&ouml;ggeler).
+This repository hosts the official Privacy Policies for open-source Android applications developed by **SneakyZippy**.
 
 Published via **GitHub Pages** at:  
 👉 **[https://sneakyzippy.github.io/privacy-policy/](https://sneakyzippy.github.io/privacy-policy/)**
