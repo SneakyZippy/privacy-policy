@@ -86,7 +86,7 @@
         </thead>
         <tbody>
           <tr>
-            <td><code>READ_MEDIA_IMAGES</code><br>(Photo Picker / SAF)</td>
+            <td><code>READ_MEDIA_IMAGES</code><br><code>READ_MEDIA_VISUAL_USER_SELECTED</code></td>
             <td>
               Allows you to select local photos or folders from your device to display in the ambient slideshow.
             </td>
@@ -113,6 +113,15 @@
             </td>
           </tr>
           <tr>
+            <td><code>POST_NOTIFICATIONS</code></td>
+            <td>
+              Displays the foreground dock indicator while StandFrame is keeping the ambient slideshow active.
+            </td>
+            <td>
+              Local notifications only.
+            </td>
+          </tr>
+          <tr>
             <td><code>Sensors (Gravity &amp; Accelerometer)</code></td>
             <td>
               Detects physical posture (upright dock posture between 45&deg;&ndash;90&deg; tilt vs laid flat on pad) to automatically start or pause the slideshow.
@@ -131,7 +140,16 @@
             </td>
           </tr>
           <tr>
-            <td><code>WAKE_LOCK</code> &amp; <code>FOREGROUND_SERVICE</code></td>
+            <td><code>RECEIVE_BOOT_COMPLETED</code></td>
+            <td>
+              Restores wireless charging dock detection receivers upon device reboot.
+            </td>
+            <td>
+              Local boot broadcast receiver only.
+            </td>
+          </tr>
+          <tr>
+            <td><code>WAKE_LOCK</code><br><code>FOREGROUND_SERVICE</code><br><code>FOREGROUND_SERVICE_SPECIAL_USE</code></td>
             <td>
               Keeps the ambient screen active while valid dock conditions persist and handles screen saver lifecycle.
             </td>

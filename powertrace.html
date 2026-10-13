@@ -113,12 +113,57 @@
             </td>
           </tr>
           <tr>
-            <td><code>FOREGROUND_SERVICE</code></td>
+            <td><code>FOREGROUND_SERVICE</code><br><code>FOREGROUND_SERVICE_SPECIAL_USE</code></td>
             <td>
               Maintains an active background session during recording intervals (e.g., tracking idle loss while the screen is off).
             </td>
             <td>
               Displays a clear, non-dismissible ongoing notification in the status bar while recording is active.
+            </td>
+          </tr>
+          <tr>
+            <td><code>POST_NOTIFICATIONS</code></td>
+            <td>
+              Delivers session status alerts and completion summaries.
+            </td>
+            <td>
+              Local notifications only.
+            </td>
+          </tr>
+          <tr>
+            <td><code>WAKE_LOCK</code></td>
+            <td>
+              Ensures diagnostic delta snapshots are cleanly calculated when baseline or stop triggers fire.
+            </td>
+            <td>
+              Released immediately once calculations finish.
+            </td>
+          </tr>
+          <tr>
+            <td><code>INTERACT_ACROSS_USERS</code></td>
+            <td>
+              Distinguishes multi-user and work-profile processes from system services in diagnostic logs.
+            </td>
+            <td>
+              Internal UID mapping only.
+            </td>
+          </tr>
+          <tr>
+            <td><code>RECEIVE_BOOT_COMPLETED</code></td>
+            <td>
+              Resumes user-configured continuous monitoring schedules after device reboot (optional feature).
+            </td>
+            <td>
+              Local schedule restoration only.
+            </td>
+          </tr>
+          <tr>
+            <td><code>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</code></td>
+            <td>
+              Prevents OEM task-killers from terminating the diagnostic recording service while tracking standby drain.
+            </td>
+            <td>
+              Prompts user only if necessary for continuous recording.
             </td>
           </tr>
           <tr>

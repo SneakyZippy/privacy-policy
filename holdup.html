@@ -139,6 +139,15 @@
               Queried locally to populate the settings list. The list of installed apps is never saved to external storage or sent off-device.
             </td>
           </tr>
+          <tr>
+            <td><code>FOREGROUND_SERVICE</code><br><code>FOREGROUND_SERVICE_SPECIAL_USE</code></td>
+            <td>
+              Keeps the mindful pause timer active during unlocked sessions so the app can deliver the soft completion nudge when session time expires.
+            </td>
+            <td>
+              Standard foreground service lifecycle. Operates strictly locally without data collection.
+            </td>
+          </tr>
         </tbody>
       </table>
 

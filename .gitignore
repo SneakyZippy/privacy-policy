@@ -1,0 +1,13 @@
+# Local developer tools and audit scripts
+audit.ps1
+
+# Local project knowledge (contains local file paths)
+APPS.md
+
+# Antigravity / AI internal workspace rules
+.gemini/
+
+# OS / Editor artifacts
+.DS_Store
+Thumbs.db
+*.log
