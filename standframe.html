@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | StandFrame</title>
+  <meta name="description" content="Privacy policy for StandFrame (Pixelstand - com.standframe.app) - Ambient digital photo frame dock for Android.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <span>🛡️</span>
+        <span>SneakyZippy Apps</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Overview</a></li>
+          <li><a href="holdup.html">HoldUp</a></li>
+          <li><a href="powertrace.html">PowerTrace</a></li>
+          <li><a href="standframe.html" class="active">StandFrame</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="index.html" class="back-link">&larr; Back to all policies</a>
+
+    <section class="hero" style="padding-top: 1rem;">
+      <div class="hero-pill">
+        <span>🖼️</span> App-Specific Privacy Policy
+      </div>
+      <h1>StandFrame</h1>
+      <p>
+        <strong>Package ID:</strong> <code>com.standframe.app</code> (StandFrame / Pixelstand)<br>
+        Ambient digital photo frame dock activated on upright wireless charging.
+      </p>
+    </section>
+
+    <div class="meta-bar">
+      <span><strong>Effective Date:</strong> October 2026</span>
+      <span><strong>Application Version:</strong> 1.0+</span>
+      <span><strong>Developer:</strong> Felix Z&ouml;ggeler (SneakyZippy)</span>
+      <span><strong>Source Code:</strong> <a href="https://github.com/SneakyZippy" target="_blank" rel="noopener" style="color: inherit;">GitHub Profile</a></span>
+    </div>
+
+    <div class="callout callout-success">
+      <p>
+        <strong>Summary:</strong> StandFrame prioritizes user privacy. Your personal photos remain on your device and are never uploaded. Notification ticker data is processed purely in volatile memory (RAM) and never saved or transmitted. Network access is used solely to fetch public media channels (such as NASA APOD or Unsplash) with zero user tracking.
+      </p>
+    </div>
+
+    <article class="content-box">
+      <h2>1. Overview</h2>
+      <p>
+        StandFrame turns your Android device into an ambient desk display and smart photo frame whenever docked upright on a wireless charger. The application supports rotating local photo albums, displaying customizable clock faces, fetching curated astronomy or nature imagery, and optionally surfacing priority notifications.
+      </p>
+
+      <h2>2. Information Collection and Telemetry</h2>
+      <p>
+        StandFrame is designed with strong privacy safeguards:
+      </p>
+      <ul>
+        <li><strong>No Personal Identifiers:</strong> We do not collect your name, email, phone number, device identifiers, or GPS location.</li>
+        <li><strong>No Analytics SDKs:</strong> No analytics libraries or telemetry platforms (such as Google Analytics or Firebase) are included.</li>
+        <li><strong>No Advertisements:</strong> StandFrame is entirely free of third-party advertisements.</li>
+        <li><strong>No User Account:</strong> No signup, login, or cloud accounts are used.</li>
+      </ul>
+
+      <h2>3. Device Permissions &amp; Data Handling</h2>
+      <p>
+        StandFrame requests specific permissions to support its ambient dock and media rendering capabilities:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Permission / Feature</th>
+            <th>Purpose</th>
+            <th>Data Handling &amp; Privacy Safeguards</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>READ_MEDIA_IMAGES</code><br>(Photo Picker / SAF)</td>
+            <td>
+              Allows you to select local photos or folders from your device to display in the ambient slideshow.
+            </td>
+            <td>
+              <strong>100% on-device.</strong> StandFrame reads user-selected image URIs to render them on screen. Selected photos are <strong>never uploaded, shared, or transmitted</strong> over the network.
+            </td>
+          </tr>
+          <tr>
+            <td><code>NotificationListenerService</code><br>(Notification Access)</td>
+            <td>
+              Optional ambient feature that displays a subtle icon or ticker for incoming notifications on the clock screen while docked.
+            </td>
+            <td>
+              <strong>Strictly in-memory (RAM) only.</strong> Incoming notification events are parsed solely to render the visual ticker on screen. Notification text and contents are <strong>never saved to disk, never logged, and never transmitted</strong> over the internet.
+            </td>
+          </tr>
+          <tr>
+            <td><code>INTERNET</code></td>
+            <td>
+              Used solely to fetch public imagery when you enable public media channels (such as NASA Astronomy Picture of the Day or curated Unsplash topics).
+            </td>
+            <td>
+              Direct HTTPS requests are made only to public endpoints (e.g. <code>api.nasa.gov</code>, <code>api.unsplash.com</code>). No user identification, personal metadata, or tracking tokens are sent with these requests.
+            </td>
+          </tr>
+          <tr>
+            <td><code>Sensors (Gravity &amp; Accelerometer)</code></td>
+            <td>
+              Detects physical posture (upright dock posture between 45&deg;&ndash;90&deg; tilt vs laid flat on pad) to automatically start or pause the slideshow.
+            </td>
+            <td>
+              Sampled transiently in real-time. Sensor values are discarded immediately and never stored or logged.
+            </td>
+          </tr>
+          <tr>
+            <td><code>Battery &amp; Charging State</code></td>
+            <td>
+              Monitors wireless charging connectivity (<code>BATTERY_PLUGGED_WIRELESS</code>) to trigger the ambient dock mode.
+            </td>
+            <td>
+              Local system broadcast check only.
+            </td>
+          </tr>
+          <tr>
+            <td><code>WAKE_LOCK</code> &amp; <code>FOREGROUND_SERVICE</code></td>
+            <td>
+              Keeps the ambient screen active while valid dock conditions persist and handles screen saver lifecycle.
+            </td>
+            <td>
+              Standard Android service handling. Includes OLED burn-in micro-shift protections.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>4. Third-Party Web Services</h2>
+      <p>
+        If you choose to enable online channels (such as NASA APOD or Unsplash):
+      </p>
+      <ul>
+        <li>Requests are sent directly from your device to the respective public API providers to download daily public photos.</li>
+        <li>Downloaded images are cached in the app's local temporary cache directory to reduce bandwidth consumption.</li>
+        <li>StandFrame does not send any personal data or usage analytics to these third parties.</li>
+      </ul>
+
+      <h2>5. Data Retention and Deletion</h2>
+      <p>
+        All preferences (channel playlist weights, tilt thresholds, clock styles) are stored locally in private application preferences. Uninstalling StandFrame deletes all configuration settings and clears the local image cache immediately.
+      </p>
+
+      <h2>6. Children's Privacy</h2>
+      <p>
+        StandFrame does not collect any personal information from children or adults alike.
+      </p>
+
+      <h2>7. Contact and Support</h2>
+      <p>
+        For questions or feedback regarding StandFrame's privacy policy:
+      </p>
+      <ul>
+        <li>Developer: Felix Z&ouml;ggeler (SneakyZippy)</li>
+        <li>Email: <a href="mailto:sneakyzippy.dev@gmail.com" style="color: var(--accent);">sneakyzippy.dev@gmail.com</a></li>
+        <li>GitHub: <a href="https://github.com/SneakyZippy" target="_blank" rel="noopener" style="color: var(--accent);">github.com/SneakyZippy</a></li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; 2026 Felix Z&ouml;ggeler (SneakyZippy). StandFrame is open-source software.</p>
+  </footer>
+
+</body>
+</html>

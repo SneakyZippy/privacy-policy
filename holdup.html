@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | HoldUp</title>
+  <meta name="description" content="Privacy policy for HoldUp (com.holdup.app) - Mindful friction app. Completely offline, zero telemetry, no data collection.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <span>🛡️</span>
+        <span>SneakyZippy Apps</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Overview</a></li>
+          <li><a href="holdup.html" class="active">HoldUp</a></li>
+          <li><a href="powertrace.html">PowerTrace</a></li>
+          <li><a href="standframe.html">StandFrame</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="index.html" class="back-link">&larr; Back to all policies</a>
+
+    <section class="hero" style="padding-top: 1rem;">
+      <div class="hero-pill">
+        <span>🧘</span> App-Specific Privacy Policy
+      </div>
+      <h1>HoldUp</h1>
+      <p>
+        <strong>Package ID:</strong> <code>com.holdup.app</code><br>
+        Mindful pause before doomscrolling for healthier digital habits.
+      </p>
+    </section>
+
+    <div class="meta-bar">
+      <span><strong>Effective Date:</strong> October 2026</span>
+      <span><strong>Application Version:</strong> 1.0+</span>
+      <span><strong>Developer:</strong> Felix Z&ouml;ggeler (SneakyZippy)</span>
+      <span><strong>Source Code:</strong> <a href="https://github.com/SneakyZippy/HoldUp" target="_blank" rel="noopener" style="color: inherit;">GitHub Repository</a></span>
+    </div>
+
+    <div class="callout callout-success">
+      <p>
+        <strong>Summary:</strong> HoldUp operates <strong>100% offline</strong> on your device. The app does not request internet access (<code>android.permission.INTERNET</code> is not declared), collects no personal information, and contains zero advertising or tracking libraries.
+      </p>
+    </div>
+
+    <article class="content-box">
+      <h2>1. Overview and Core Philosophy</h2>
+      <p>
+        HoldUp is an open-source digital wellbeing application designed to help users pause and reflect before opening distracting or habitual applications. Because your personal habits and screen time are intimate aspects of your digital life, HoldUp is engineered from the ground up to guarantee absolute privacy by running exclusively on your device.
+      </p>
+
+      <h2>2. Information Collection and Processing</h2>
+      <p>
+        <strong>HoldUp does not collect, transmit, sell, or share any personal information.</strong>
+      </p>
+      <ul>
+        <li><strong>No Account Required:</strong> You never register, log in, or provide any email address or personal credentials.</li>
+        <li><strong>No Telemetry or Analytics:</strong> The app does not include Firebase, Google Analytics, Sentry, Mixpanel, or any other telemetry library.</li>
+        <li><strong>No Advertising:</strong> There are no advertisements or third-party tracking identifiers.</li>
+        <li><strong>No Internet Permission:</strong> The application does not even request Android network access. It is physically impossible for the app to transmit data outside of your phone.</li>
+      </ul>
+
+      <h2>3. Device Permissions &amp; How They Are Used</h2>
+      <p>
+        To perform its core functions of mindful intervention and habit coaching, HoldUp requests specific Android permissions. Each permission is used strictly locally:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Purpose</th>
+            <th>Data Treatment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>AccessibilityService</code></td>
+            <td>
+              Detects when a user launches an application listed in the user's shield list in order to display the mindful pause screen. Also triggers standard system navigation (e.g., Back or Home action) when the user taps "Walk Away".
+            </td>
+            <td>
+              <strong>Zero data logging.</strong> HoldUp only checks the foreground package name against your selected shielded apps. It <strong>never</strong> reads, inspects, captures, logs, or stores keystrokes, passwords, personal messages, or screen content.
+            </td>
+          </tr>
+          <tr>
+            <td><code>PACKAGE_USAGE_STATS</code><br>(Usage Access)</td>
+            <td>
+              Allows the app to display today's accumulated screen time on the mindful reality check banner, providing context on daily usage.
+            </td>
+            <td>
+              Read in real-time and displayed directly on screen. It is never logged or saved to persistent history.
+            </td>
+          </tr>
+          <tr>
+            <td><code>SYSTEM_ALERT_WINDOW</code><br>(Display Over Other Apps)</td>
+            <td>
+              Enables the mindful friction overlay (breathing animation, reflection prompt, or personal anchor) to appear over a launched shielded application.
+            </td>
+            <td>
+              Used solely to present the user interface. No background screen recording or screenshotting is performed.
+            </td>
+          </tr>
+          <tr>
+            <td><code>POST_NOTIFICATIONS</code></td>
+            <td>
+              Sends a gentle reminder notification when a user-selected mindful usage session (5, 10, or 15 minutes) has expired.
+            </td>
+            <td>
+              Scheduled and delivered locally on the device using Android's notification manager.
+            </td>
+          </tr>
+          <tr>
+            <td><code>VIBRATE</code></td>
+            <td>
+              Powers rhythmic tactile haptic feedback during the guided breathing exercise.
+            </td>
+            <td>
+              Local hardware actuation only.
+            </td>
+          </tr>
+          <tr>
+            <td><code>QUERY_ALL_PACKAGES</code></td>
+            <td>
+              Allows the user to browse their installed applications in Settings to select which apps to shield or monitor.
+            </td>
+            <td>
+              Queried locally to populate the settings list. The list of installed apps is never saved to external storage or sent off-device.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>4. Local Data Storage</h2>
+      <p>
+        All application state is stored locally within Android's sandboxed private storage:
+      </p>
+      <ul>
+        <li><strong>User Settings:</strong> Shielded app selections, pause duration preferences, and toggle states (stored via Android SharedPreferences / DataStore).</li>
+        <li><strong>Mindful Points &amp; Level:</strong> Points earned from tapping "Walk Away" or "Healthy Swap" are saved locally to track your focus tier.</li>
+        <li><strong>Custom Reflections &amp; Anchors:</strong> If you add custom quotes or choose an anchor image from your device, references are stored locally in your app's private directory.</li>
+      </ul>
+      <p>
+        Uninstalling the application immediately and permanently removes all stored data.
+      </p>
+
+      <h2>5. Accessibility Service Declaration (Google Play Policy Compliance)</h2>
+      <div class="callout">
+        <p>
+          HoldUp uses the Android <strong>AccessibilityService API</strong> strictly for its stated core functionality:
+        </p>
+        <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+          <li>Detecting foreground window state changes to determine when a shielded application has been opened.</li>
+          <li>Performing the global Back or Home gesture when the user chooses to "Walk Away" from an app.</li>
+          <li>HoldUp <strong>does not</strong> use Accessibility APIs to collect personal data, monitor user typing, record audio, capture credentials, or modify system settings without user consent.</li>
+        </ul>
+      </div>
+
+      <h2>6. Children's Privacy</h2>
+      <p>
+        HoldUp does not collect any data whatsoever from any users, including children under 13 years of age.
+      </p>
+
+      <h2>7. Open Source and Verification</h2>
+      <p>
+        The complete source code for HoldUp is published under the GNU General Public License v3.0 (GPL-3.0) and is available for independent review at <a href="https://github.com/SneakyZippy/HoldUp" target="_blank" rel="noopener" style="color: var(--accent);">github.com/SneakyZippy/HoldUp</a>.
+      </p>
+
+      <h2>8. Contact</h2>
+      <p>
+        If you have questions about HoldUp's privacy policy, you may contact the developer:
+      </p>
+      <ul>
+        <li>Developer: Felix Z&ouml;ggeler (SneakyZippy)</li>
+        <li>Email: <a href="mailto:sneakyzippy.dev@gmail.com" style="color: var(--accent);">sneakyzippy.dev@gmail.com</a></li>
+        <li>Issue Tracker: <a href="https://github.com/SneakyZippy/HoldUp/issues" target="_blank" rel="noopener" style="color: var(--accent);">GitHub Issues</a></li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; 2026 Felix Z&ouml;ggeler (SneakyZippy). HoldUp is open-source software under GPL-3.0.</p>
+  </footer>
+
+</body>
+</html>

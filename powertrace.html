@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | PowerTrace</title>
+  <meta name="description" content="Privacy policy for PowerTrace (com.antigravity.battery) - Android battery telemetry and idle drain diagnostics tool.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <span>🛡️</span>
+        <span>SneakyZippy Apps</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Overview</a></li>
+          <li><a href="holdup.html">HoldUp</a></li>
+          <li><a href="powertrace.html" class="active">PowerTrace</a></li>
+          <li><a href="standframe.html">StandFrame</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="index.html" class="back-link">&larr; Back to all policies</a>
+
+    <section class="hero" style="padding-top: 1rem;">
+      <div class="hero-pill">
+        <span>⚡</span> App-Specific Privacy Policy
+      </div>
+      <h1>PowerTrace</h1>
+      <p>
+        <strong>Package ID:</strong> <code>com.antigravity.battery</code><br>
+        Android battery telemetry and idle drain diagnostics tool.
+      </p>
+    </section>
+
+    <div class="meta-bar">
+      <span><strong>Effective Date:</strong> October 2026</span>
+      <span><strong>Application Version:</strong> 1.0+</span>
+      <span><strong>Developer:</strong> Felix Z&ouml;ggeler (SneakyZippy)</span>
+      <span><strong>Source Code:</strong> <a href="https://github.com/SneakyZippy/PowerTrace" target="_blank" rel="noopener" style="color: inherit;">GitHub Repository</a></span>
+    </div>
+
+    <div class="callout callout-success">
+      <p>
+        <strong>Summary:</strong> PowerTrace is designed for transparency and diagnostics. All battery telemetry, alarms, and wakelock statistics remain entirely on your device in a local Room database. PowerTrace does not send diagnostic telemetry to external servers and contains zero trackers or advertisements.
+      </p>
+    </div>
+
+    <article class="content-box">
+      <h2>1. Overview</h2>
+      <p>
+        PowerTrace provides technical insights into what drains your device's battery while the screen is idle. It captures snapshots of Android's internal diagnostic sources (such as <code>dumpsys batterystats</code>, <code>dumpsys alarm</code>, and <code>dumpsys power</code>) to compute deltas between user-defined recording sessions (e.g. overnight drain).
+      </p>
+
+      <h2>2. Information Collection and Telemetry Policy</h2>
+      <p>
+        PowerTrace is an offline diagnostic utility:
+      </p>
+      <ul>
+        <li><strong>No External Telemetry:</strong> PowerTrace does not transmit your battery statistics, hardware identifiers, or usage logs to any remote server or third party.</li>
+        <li><strong>No Analytics SDKs:</strong> There are no third-party trackers, crash telemetry suites (like Firebase or Crashlytics), or telemetry beacons embedded in the application.</li>
+        <li><strong>No Accounts:</strong> You are not required to create an account or provide any personal information.</li>
+        <li><strong>No Ads:</strong> PowerTrace is completely ad-free.</li>
+      </ul>
+
+      <h2>3. Diagnostic Permissions &amp; Data Accessed</h2>
+      <p>
+        To perform deep battery diagnostics without requiring root privileges, PowerTrace requests specific advanced Android diagnostic permissions (typically granted via ADB by the user):
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Permission / API</th>
+            <th>Diagnostic Purpose</th>
+            <th>Data Scope &amp; Handling</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>BATTERY_STATS</code></td>
+            <td>
+              Reads system-level battery state, discharge rate, and per-app hardware energy attribution tables.
+            </td>
+            <td>
+              Saved locally to the app's internal database for the duration of user-configured recording sessions. Never uploaded.
+            </td>
+          </tr>
+          <tr>
+            <td><code>DUMP</code></td>
+            <td>
+              Accesses internal diagnostic service dumps (e.g., <code>dumpsys alarm</code>, <code>dumpsys power</code>) to pinpoint partial wakelocks and background wakeup alarms.
+            </td>
+            <td>
+              Parsed locally in real-time to compute energy consumption metrics. Raw dump logs are discarded after delta calculation unless explicitly saved by the user.
+            </td>
+          </tr>
+          <tr>
+            <td><code>PACKAGE_USAGE_STATS</code></td>
+            <td>
+              Correlates foreground app activity with background battery draw to identify idle drain culprits.
+            </td>
+            <td>
+              Processed purely on-device for session delta reporting.
+            </td>
+          </tr>
+          <tr>
+            <td><code>FOREGROUND_SERVICE</code></td>
+            <td>
+              Maintains an active background session during recording intervals (e.g., tracking idle loss while the screen is off).
+            </td>
+            <td>
+              Displays a clear, non-dismissible ongoing notification in the status bar while recording is active.
+            </td>
+          </tr>
+          <tr>
+            <td><code>QUERY_ALL_PACKAGES</code></td>
+            <td>
+              Resolves Android UIDs from the diagnostic dump to friendly package names and app icons.
+            </td>
+            <td>
+              Used strictly for local UI display and name resolution.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>4. Local Storage and Data Retention</h2>
+      <p>
+        All session recordings, baseline snapshots, and diagnostic metrics are stored exclusively in a local SQLite database (managed via Android Room) in the application's private sandbox directory:
+      </p>
+      <ul>
+        <li>You can delete individual recording sessions or clear the entire history at any time from within the app settings.</li>
+        <li>Uninstalling PowerTrace completely purges the local database and all associated diagnostic caches.</li>
+      </ul>
+
+      <h2>5. User-Initiated Data Export</h2>
+      <p>
+        PowerTrace includes a diagnostic export feature allowing users to export session snapshots as a JSON file or diagnostic checkin report for personal debugging or bug reports.
+      </p>
+      <p>
+        This export is <strong>100% initiated by you</strong> using Android's system file picker or share sheet. PowerTrace never automatically uploads or shares exported reports. You maintain full ownership and control over where exported files are saved or sent.
+      </p>
+
+      <h2>6. Children's Privacy</h2>
+      <p>
+        PowerTrace does not collect any personal data from anyone, including children under 13.
+      </p>
+
+      <h2>7. Open Source Verification</h2>
+      <p>
+        PowerTrace is free and open-source software distributed under the GNU General Public License v3.0 (GPL-3.0). The full source code can be inspected, audited, and built from GitHub:
+        <br>
+        <a href="https://github.com/SneakyZippy/PowerTrace" target="_blank" rel="noopener" style="color: var(--accent);">https://github.com/SneakyZippy/PowerTrace</a>
+      </p>
+
+      <h2>8. Contact Information</h2>
+      <p>
+        For inquiries or privacy feedback regarding PowerTrace:
+      </p>
+      <ul>
+        <li>Developer: Felix Z&ouml;ggeler (SneakyZippy)</li>
+        <li>Email: <a href="mailto:sneakyzippy.dev@gmail.com" style="color: var(--accent);">sneakyzippy.dev@gmail.com</a></li>
+        <li>Repository Issues: <a href="https://github.com/SneakyZippy/PowerTrace/issues" target="_blank" rel="noopener" style="color: var(--accent);">GitHub Issues</a></li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; 2026 Felix Z&ouml;ggeler (SneakyZippy). PowerTrace is open-source under GPL-3.0.</p>
+  </footer>
+
+</body>
+</html>
