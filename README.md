@@ -4,8 +4,6 @@
 title: Datenschutzerklärung
 ---
 
-# Datenschutzerklärung für [Name deiner App]
-
 Zuletzt aktualisiert: 13. Oktober 2026
 
 ## 1. Überblick
@@ -21,4 +19,4 @@ Die App nutzt keine Werbenetzwerke, Tracking-Tools oder Analysedienste von Dritt
 
 ## 4. Kontakt
 Bei Fragen zum Datenschutz erreichen Sie uns unter:  
-E-Mail: deine-support-adresse@example.com
+E-Mail: 
