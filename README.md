@@ -36,27 +36,6 @@ Published via **GitHub Pages** at:
 
 ---
 
-## 🚀 GitHub Pages Setup
-
-To deploy or verify GitHub Pages for this repository:
-
-1. Open this repository on GitHub: `https://github.com/SneakyZippy/privacy-policy`
-2. Go to **Settings** &rarr; **Pages** (in the left sidebar).
-3. Under **Build and deployment**:
-   - **Source**: `Deploy from a branch`
-   - **Branch**: `main`
-   - **Folder**: `/(root)`
-4. Click **Save**.
-5. Once built (usually takes ~30 seconds), your policies will be live at:
-   - Hub: `https://sneakyzippy.github.io/privacy-policy/`
-   - HoldUp: `https://sneakyzippy.github.io/privacy-policy/holdup.html`
-   - PowerTrace: `https://sneakyzippy.github.io/privacy-policy/powertrace.html`
-   - StandFrame: `https://sneakyzippy.github.io/privacy-policy/standframe.html`
-
-Use these direct URLs when configuring your store listings (e.g. Google Play Console, F-Droid).
-
----
-
 ## 📬 Contact / Kontakt
 
 For inquiries or questions regarding privacy practices:
