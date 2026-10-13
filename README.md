@@ -13,7 +13,6 @@ Published via **GitHub Pages** at:
 |---|---|---|---|
 | **HoldUp** | `com.holdup.app` | [HoldUp Policy](https://sneakyzippy.github.io/privacy-policy/holdup.html) | Mindful pause before doomscrolling. 100% offline, zero network access, strictly local accessibility service handling. |
 | **PowerTrace** | `com.antigravity.battery` | [PowerTrace Policy](https://sneakyzippy.github.io/privacy-policy/powertrace.html) | Android battery telemetry and idle drain diagnostics tool. Local Room SQLite storage, user-initiated exports only. |
-| **StandFrame** | `com.standframe.app` | [StandFrame Policy](https://sneakyzippy.github.io/privacy-policy/standframe.html) | Ambient digital photo frame dock for wireless charging. Local photo access only, ephemeral notification ticker in RAM. |
 
 ---
 
