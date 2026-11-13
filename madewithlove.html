@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | MadeWithLove</title>
+  <meta name="description" content="Privacy policy for MadeWithLove (com.madewithlove) - Local-first recipe manager, cookbook, and cooking companion.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <span>🛡️</span>
+        <span>SneakyZippy Apps</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Overview</a></li>
+          <li><a href="holdup.html">HoldUp</a></li>
+          <li><a href="powerlab.html">PowerLab</a></li>
+          <li><a href="madewithlove.html" class="active">MadeWithLove</a></li>
+          <li><a href="scribidoo.html">Scribidoo</a></li>
+          <li><a href="standframe.html">StandFrame</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="index.html" class="back-link">&larr; Back to all policies</a>
+
+    <section class="hero" style="padding-top: 1rem;">
+      <div class="hero-pill">
+        <span>🍳</span> App-Specific Privacy Policy
+      </div>
+      <h1>MadeWithLove</h1>
+      <p>
+        <strong>Package ID:</strong> <code>com.madewithlove</code><br>
+        Local-first recipe manager, cookbook, grocery list, and cooking timer companion.
+      </p>
+    </section>
+
+    <div class="meta-bar">
+      <span><strong>Effective Date:</strong> November 2026</span>
+      <span><strong>Application Version:</strong> 1.3+</span>
+      <span><strong>Developer:</strong> SneakyZippy</span>
+      <span><strong>Source Code:</strong> <a href="https://github.com/SneakyZippy/MadeWithLove" target="_blank" rel="noopener" style="color: inherit;">GitHub Repository</a></span>
+    </div>
+
+    <div class="callout callout-success">
+      <p>
+        <strong>Summary:</strong> MadeWithLove stores your recipes, meal plans, and grocery lists <strong>locally on your device</strong>. Network access is used strictly on-demand when you explicitly import a recipe or image from a URL you provide. There are no accounts, no cloud sync, no trackers, and no advertisements.
+      </p>
+    </div>
+
+    <article class="content-box">
+      <h2>1. Overview</h2>
+      <p>
+        MadeWithLove is a recipe and cooking companion app designed to help you collect, scan, organize, and cook recipes without accounts, paywalls, or tracking. All personal cookbook data lives in a local SQLite Room database on your device.
+      </p>
+
+      <h2>2. Information Collection and Network Usage</h2>
+      <p>
+        <strong>MadeWithLove does not collect, sell, or share personal information.</strong>
+      </p>
+      <ul>
+        <li><strong>No Accounts or Cloud Sync:</strong> You never need to create an account or sign in. Your recipes are never uploaded to a SneakyZippy server.</li>
+        <li><strong>On-Demand Web Recipe Import:</strong> When you paste a recipe URL or image URL to import it, the app fetches only that specific webpage or image directly from the website you requested (using HTTP/HTTPS or an on-device WebView fallback for sites that require browser rendering).</li>
+        <li><strong>On-Device Photo OCR:</strong> When scanning a recipe from a photo, text recognition is performed locally on your device using Google ML Kit Text Recognition without uploading your photos to external servers.</li>
+        <li><strong>Zero Analytics or Ads:</strong> MadeWithLove contains no analytics SDKs, crash telemetry, or advertising libraries.</li>
+      </ul>
+
+      <h2>3. Device Permissions &amp; How They Are Used</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Permission / Feature</th>
+            <th>Purpose</th>
+            <th>Data Treatment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>INTERNET</code></td>
+            <td>
+              Fetches recipe pages (JSON-LD / HTML) or recipe photos from URLs that you explicitly enter in the recipe importer.
+            </td>
+            <td>
+              Used solely for user-initiated imports. No background network requests, telemetry, or analytics are sent.
+            </td>
+          </tr>
+          <tr>
+            <td><code>POST_NOTIFICATIONS</code></td>
+            <td>
+              Delivers local cooking timer alerts and step reminders while you are preparing a recipe.
+            </td>
+            <td>
+              Scheduled and dispatched locally on your device via Android's notification manager.
+            </td>
+          </tr>
+          <tr>
+            <td><code>VIBRATE</code></td>
+            <td>
+              Provides tactile haptic alerts when a cooking timer completes.
+            </td>
+            <td>
+              Local hardware actuation only.
+            </td>
+          </tr>
+          <tr>
+            <td><code>WAKE_LOCK</code></td>
+            <td>
+              Ensures cooking timer alarms and reminders fire reliably while a timer is running.
+            </td>
+            <td>
+              Released immediately when the timer completes or is cancelled.
+            </td>
+          </tr>
+          <tr>
+            <td><code>FileProvider</code><br>(User-Initiated Sharing)</td>
+            <td>
+              Allows you to export or share recipes and grocery lists with other apps on your device.
+            </td>
+            <td>
+              Triggered only when you tap Share/Export. You control where the exported file is sent.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>4. Local Storage and Data Retention</h2>
+      <p>
+        All recipes, ingredients, cooking notes, and grocery lists are stored locally in the app's private SQLite database on your device. Uninstalling MadeWithLove permanently deletes all locally stored app data.
+      </p>
+
+      <h2>5. Children's Privacy</h2>
+      <p>
+        MadeWithLove does not collect personal information from anyone, including children under 13 years of age.
+      </p>
+
+      <h2>6. Contact</h2>
+      <p>
+        If you have questions about MadeWithLove's privacy practices:
+      </p>
+      <ul>
+        <li>Developer: SneakyZippy</li>
+        <li>Email: <a href="mailto:sneakyzippy.dev@gmail.com" style="color: var(--accent);">sneakyzippy.dev@gmail.com</a></li>
+        <li>GitHub: <a href="https://github.com/SneakyZippy" target="_blank" rel="noopener" style="color: var(--accent);">github.com/SneakyZippy</a></li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; 2026 SneakyZippy. MadeWithLove.</p>
+  </footer>
+
+</body>
+</html>

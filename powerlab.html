@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | PowerLab</title>
+  <meta name="description" content="Privacy policy for PowerLab (com.sneakyzippy.powerlab) - Android battery telemetry and idle drain diagnostics tool.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <span>🛡️</span>
+        <span>SneakyZippy Apps</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Overview</a></li>
+          <li><a href="holdup.html">HoldUp</a></li>
+          <li><a href="powerlab.html" class="active">PowerLab</a></li>
+          <li><a href="madewithlove.html">MadeWithLove</a></li>
+          <li><a href="scribidoo.html">Scribidoo</a></li>
+          <li><a href="standframe.html">StandFrame</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="index.html" class="back-link">&larr; Back to all policies</a>
+
+    <section class="hero" style="padding-top: 1rem;">
+      <div class="hero-pill">
+        <span>⚡</span> App-Specific Privacy Policy
+      </div>
+      <h1>PowerLab</h1>
+      <p>
+        <strong>Package ID:</strong> <code>com.sneakyzippy.powerlab</code><br>
+        Android battery telemetry and idle drain diagnostics tool (formerly PowerTrace).
+      </p>
+    </section>
+
+    <div class="meta-bar">
+      <span><strong>Effective Date:</strong> November 2026</span>
+      <span><strong>Application Version:</strong> 1.1+</span>
+      <span><strong>Developer:</strong> SneakyZippy</span>
+      <span><strong>Source Code:</strong> <a href="https://github.com/SneakyZippy/PowerLab" target="_blank" rel="noopener" style="color: inherit;">GitHub Repository</a></span>
+    </div>
+
+    <div class="callout callout-success">
+      <p>
+        <strong>Summary:</strong> PowerLab operates <strong>100% offline</strong> (<code>android.permission.INTERNET</code> is not declared). All battery telemetry, alarms, and wakelock statistics remain entirely on your device in a local Room database. PowerLab contains zero trackers or advertisements.
+      </p>
+    </div>
+
+    <article class="content-box">
+      <h2>1. Overview</h2>
+      <p>
+        PowerLab provides technical insights into what drains your device's battery while the screen is idle. It captures snapshots of Android's internal diagnostic sources (such as <code>dumpsys batterystats</code>, <code>dumpsys alarm</code>, and <code>dumpsys power</code>) to compute deltas between user-defined recording sessions (e.g., overnight drain) or continuous background monitoring.
+      </p>
+
+      <h2>2. Information Collection and Telemetry Policy</h2>
+      <p>
+        PowerLab is an offline diagnostic utility:
+      </p>
+      <ul>
+        <li><strong>No Internet Access:</strong> PowerLab does not declare <code>INTERNET</code> permission and cannot transmit your battery statistics, hardware identifiers, or usage logs to any remote server.</li>
+        <li><strong>No Analytics SDKs:</strong> There are no third-party trackers, crash telemetry suites (like Firebase or Crashlytics), or analytics beacons embedded in the application.</li>
+        <li><strong>No Accounts:</strong> You are not required to create an account or provide any personal information.</li>
+        <li><strong>No Ads:</strong> PowerLab is completely ad-free.</li>
+      </ul>
+
+      <h2>3. Diagnostic Permissions &amp; Data Accessed</h2>
+      <p>
+        To perform deep battery diagnostics without requiring root privileges, PowerLab requests specific advanced Android diagnostic permissions (typically granted via ADB or optionally via Shizuku on-device):
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Permission / API</th>
+            <th>Diagnostic Purpose</th>
+            <th>Data Scope &amp; Handling</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>BATTERY_STATS</code></td>
+            <td>
+              Reads system-level battery state, discharge rate, and per-app hardware energy attribution tables.
+            </td>
+            <td>
+              Saved locally to the app's internal database for user-configured recording sessions. Never uploaded.
+            </td>
+          </tr>
+          <tr>
+            <td><code>DUMP</code></td>
+            <td>
+              Accesses internal diagnostic service dumps (e.g., <code>dumpsys alarm</code>, <code>dumpsys power</code>) to pinpoint partial wakelocks and background wakeup alarms.
+            </td>
+            <td>
+              Parsed locally in real-time to compute energy consumption metrics. Raw dump logs are discarded after delta calculation unless explicitly exported by the user.
+            </td>
+          </tr>
+          <tr>
+            <td><code>PACKAGE_USAGE_STATS</code></td>
+            <td>
+              Correlates foreground app activity with background battery draw to identify idle drain culprits.
+            </td>
+            <td>
+              Processed purely on-device for session delta reporting.
+            </td>
+          </tr>
+          <tr>
+            <td><code>INTERACT_ACROSS_USERS</code></td>
+            <td>
+              Distinguishes multi-user and work-profile processes from system services in diagnostic logs.
+            </td>
+            <td>
+              Internal UID mapping only.
+            </td>
+          </tr>
+          <tr>
+            <td><code>FOREGROUND_SERVICE</code><br><code>FOREGROUND_SERVICE_SPECIAL_USE</code></td>
+            <td>
+              Maintains active manual benchmark sessions or user-controlled continuous monitoring intervals while the screen is off.
+            </td>
+            <td>
+              Displays a clear ongoing notification in the status bar while recording is active.
+            </td>
+          </tr>
+          <tr>
+            <td><code>POST_NOTIFICATIONS</code></td>
+            <td>
+              Delivers session status alerts and completion summaries.
+            </td>
+            <td>
+              Local notifications only.
+            </td>
+          </tr>
+          <tr>
+            <td><code>WAKE_LOCK</code></td>
+            <td>
+              Ensures diagnostic delta snapshots are cleanly calculated when baseline or stop triggers fire.
+            </td>
+            <td>
+              Released immediately once calculations finish.
+            </td>
+          </tr>
+          <tr>
+            <td><code>RECEIVE_BOOT_COMPLETED</code></td>
+            <td>
+              Resumes user-configured continuous monitoring schedules after device reboot or app update (optional feature).
+            </td>
+            <td>
+              Local schedule restoration only.
+            </td>
+          </tr>
+          <tr>
+            <td><code>&lt;queries&gt;</code><br>(Package Visibility &amp; Shizuku)</td>
+            <td>
+              Resolves Android UIDs from diagnostic dumps to friendly app names/icons via <code>MAIN</code> intent queries, and checks if <code>moe.shizuku.privileged.api</code> is installed for optional PC-free ADB permission setup.
+            </td>
+            <td>
+              Used strictly for local UI display and optional Shizuku integration. Installed app lists are never stored externally or transmitted.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>4. Local Storage and Data Retention</h2>
+      <p>
+        All session recordings, baseline snapshots, and diagnostic metrics are stored exclusively in a local SQLite database (managed via Android Room) in the application's private sandbox directory:
+      </p>
+      <ul>
+        <li>You can delete individual recording sessions or clear the entire history at any time from within the app settings.</li>
+        <li>Uninstalling PowerLab completely purges the local database and all associated diagnostic caches.</li>
+      </ul>
+
+      <h2>5. User-Initiated Data Export</h2>
+      <p>
+        PowerLab includes a diagnostic export feature (using Android's <code>FileProvider</code>) allowing users to export session snapshots as HTML or CSV reports for personal debugging or bug reports.
+      </p>
+      <p>
+        This export is <strong>100% initiated by you</strong> using Android's system file picker or share sheet. PowerLab never automatically uploads or shares exported reports. You maintain full ownership and control over where exported files are saved or sent.
+      </p>
+
+      <h2>6. Children's Privacy</h2>
+      <p>
+        PowerLab does not collect any personal data from anyone, including children under 13.
+      </p>
+
+      <h2>7. Open Source Verification</h2>
+      <p>
+        PowerLab is free and open-source software distributed under the GNU General Public License v3.0 (GPL-3.0). The full source code can be inspected, audited, and built from GitHub:
+        <br>
+        <a href="https://github.com/SneakyZippy/PowerLab" target="_blank" rel="noopener" style="color: var(--accent);">https://github.com/SneakyZippy/PowerLab</a>
+      </p>
+
+      <h2>8. Contact Information</h2>
+      <p>
+        For inquiries or privacy feedback regarding PowerLab:
+      </p>
+      <ul>
+        <li>Developer: SneakyZippy</li>
+        <li>Email: <a href="mailto:sneakyzippy.dev@gmail.com" style="color: var(--accent);">sneakyzippy.dev@gmail.com</a></li>
+        <li>Repository Issues: <a href="https://github.com/SneakyZippy/PowerLab/issues" target="_blank" rel="noopener" style="color: var(--accent);">GitHub Issues</a></li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; 2026 SneakyZippy. PowerLab is open-source under GPL-3.0.</p>
+  </footer>
+
+</body>
+</html>

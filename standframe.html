@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | StandFrame</title>
+  <meta name="description" content="Privacy policy for StandFrame (com.standframe.app) - Ambient digital photo frame dock for wireless chargers.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <span>🛡️</span>
+        <span>SneakyZippy Apps</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Overview</a></li>
+          <li><a href="holdup.html">HoldUp</a></li>
+          <li><a href="powerlab.html">PowerLab</a></li>
+          <li><a href="madewithlove.html">MadeWithLove</a></li>
+          <li><a href="scribidoo.html">Scribidoo</a></li>
+          <li><a href="standframe.html" class="active">StandFrame</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="index.html" class="back-link">&larr; Back to all policies</a>
+
+    <section class="hero" style="padding-top: 1rem;">
+      <div class="hero-pill">
+        <span>🖼️</span> App-Specific Privacy Policy
+      </div>
+      <h1>StandFrame</h1>
+      <p>
+        <strong>Package ID:</strong> <code>com.standframe.app</code><br>
+        Ambient digital photo frame and clock dock activated while wirelessly charging.
+      </p>
+    </section>
+
+    <div class="meta-bar">
+      <span><strong>Effective Date:</strong> November 2026</span>
+      <span><strong>Application Version:</strong> 1.0+</span>
+      <span><strong>Developer:</strong> SneakyZippy</span>
+      <span><strong>Source Code:</strong> <a href="https://github.com/SneakyZippy" target="_blank" rel="noopener" style="color: inherit;">GitHub</a></span>
+    </div>
+
+    <div class="callout callout-success">
+      <p>
+        <strong>Summary:</strong> StandFrame keeps your personal photos and notification data strictly on your device. Network access is used solely to fetch public imagery feeds (such as NASA APOD and Unsplash) when enabled. Zero telemetry, zero analytics, and zero ads.
+      </p>
+    </div>
+
+    <article class="content-box">
+      <h2>1. Overview</h2>
+      <p>
+        StandFrame turns your phone into an ambient photo frame and clock display when placed upright on a wireless charger. It supports local photo albums, optional public photography feeds, clock faces, and an ambient notification ticker.
+      </p>
+
+      <h2>2. Information Collection and Network Usage</h2>
+      <p>
+        <strong>StandFrame does not collect, sell, or share personal information.</strong>
+      </p>
+      <ul>
+        <li><strong>Public Imagery Feeds Only:</strong> If you enable NASA APOD or Unsplash channels, StandFrame makes standard HTTPS requests to public APIs (e.g., <code>api.nasa.gov</code>, <code>api.unsplash.com</code>) solely to download public wallpapers. No user identifiers or telemetry are sent.</li>
+        <li><strong>No Analytics or Ads:</strong> StandFrame contains zero tracking SDKs, crash reporters, or advertisements.</li>
+        <li><strong>No Accounts:</strong> No login or account registration is required.</li>
+      </ul>
+
+      <h2>3. Device Permissions &amp; Services Used</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Permission / Service</th>
+            <th>Purpose</th>
+            <th>Data Treatment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>READ_MEDIA_IMAGES</code><br><code>READ_MEDIA_VISUAL_USER_SELECTED</code></td>
+            <td>
+              Allows you to choose local photos and albums on your device for the ambient slideshow.
+            </td>
+            <td>
+              Photos are read and rendered locally on-device and are never uploaded or shared.
+            </td>
+          </tr>
+          <tr>
+            <td><code>NotificationListenerService</code><br>(Optional Ambient Ticker)</td>
+            <td>
+              Displays ambient notification icons or a brief ticker on the clock screen while docked.
+            </td>
+            <td>
+              Processed <strong>strictly in-memory (RAM)</strong> while docked. Notification contents are never written to disk, logged, or transmitted.
+            </td>
+          </tr>
+          <tr>
+            <td><code>INTERNET</code></td>
+            <td>
+              Downloads public photography feeds (NASA APOD, Unsplash) when those channels are enabled.
+            </td>
+            <td>
+              Used only for public image API requests; cached locally for display.
+            </td>
+          </tr>
+          <tr>
+            <td><code>FOREGROUND_SERVICE</code><br><code>FOREGROUND_SERVICE_SPECIAL_USE</code><br><code>DreamService</code></td>
+            <td>
+              Manages the ambient photo frame and screen saver mode while your device is wirelessly charging.
+            </td>
+            <td>
+              Runs locally to manage slideshow state and OLED burn-in micro-shifts.
+            </td>
+          </tr>
+          <tr>
+            <td><code>WAKE_LOCK</code></td>
+            <td>
+              Keeps the ambient display awake while docked on a wireless charger.
+            </td>
+            <td>
+              Released automatically when undocked or paused.
+            </td>
+          </tr>
+          <tr>
+            <td><code>RECEIVE_BOOT_COMPLETED</code><br><code>POST_NOTIFICATIONS</code></td>
+            <td>
+              Re-registers power/dock listeners after device restart and shows the required foreground service notification while active.
+            </td>
+            <td>
+              Local device lifecycle and status notification only.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>4. Local Storage and Data Retention</h2>
+      <p>
+        Playlist preferences, tilt/dock settings, and downloaded public wallpaper caches are stored locally in the app's private storage on your device. Uninstalling StandFrame removes all locally stored settings and cached images.
+      </p>
+
+      <h2>5. Children's Privacy</h2>
+      <p>
+        StandFrame does not collect any personal information from anyone, including children under 13 years of age.
+      </p>
+
+      <h2>6. Contact</h2>
+      <p>
+        If you have questions about StandFrame's privacy policy:
+      </p>
+      <ul>
+        <li>Developer: SneakyZippy</li>
+        <li>Email: <a href="mailto:sneakyzippy.dev@gmail.com" style="color: var(--accent);">sneakyzippy.dev@gmail.com</a></li>
+        <li>GitHub: <a href="https://github.com/SneakyZippy" target="_blank" rel="noopener" style="color: var(--accent);">github.com/SneakyZippy</a></li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="site-footer container">
+    <p>&copy; 2026 SneakyZippy. StandFrame.</p>
+  </footer>
+
+</body>
+</html>

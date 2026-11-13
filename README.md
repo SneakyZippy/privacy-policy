@@ -12,7 +12,10 @@ Published via **GitHub Pages** at:
 | Application | Package ID | Privacy Policy Link | Description |
 |---|---|---|---|
 | **HoldUp** | `com.sneakyzippy.holdup` | [HoldUp Policy](https://sneakyzippy.github.io/privacy-policy/holdup.html) | Mindful pause before doomscrolling. 100% offline, zero network access, strictly local accessibility service handling. |
-| **PowerTrace** | `com.antigravity.battery` | [PowerTrace Policy](https://sneakyzippy.github.io/privacy-policy/powertrace.html) | Android battery telemetry and idle drain diagnostics tool. Local Room SQLite storage, user-initiated exports only. |
+| **PowerLab** | `com.sneakyzippy.powerlab` | [PowerLab Policy](https://sneakyzippy.github.io/privacy-policy/powerlab.html) | Android battery telemetry and idle drain diagnostics tool (formerly PowerTrace). 100% offline, local Room SQLite storage, user-initiated exports only. |
+| **MadeWithLove** | `com.madewithlove` | [MadeWithLove Policy](https://sneakyzippy.github.io/privacy-policy/madewithlove.html) | Local-first recipe manager & cooking companion. On-device OCR and on-demand URL recipe import only. |
+| **Scribidoo** | `com.scribidoo.app` | [Scribidoo Policy](https://sneakyzippy.github.io/privacy-policy/scribidoo.html) | 100% offline handwritten note-taking, PDF annotation, and local voice-memo canvas app. |
+| **StandFrame** | `com.standframe.app` | [StandFrame Policy](https://sneakyzippy.github.io/privacy-policy/standframe.html) | Ambient digital photo frame dock for wireless chargers. Local photos, public feeds only, in-memory notification ticker. |
 
 ---
 
